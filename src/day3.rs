@@ -158,7 +158,7 @@ pub fn solve_part2(input: &[Vec<char>]) -> u32 {
             if *c == '*' {
                 let mut nums = get_neighbours((y, x), input)
                     .iter()
-                    .filter_map(|p| numbers_table.get(p).map(|x| x.clone()))
+                    .filter_map(|p| numbers_table.get(p).cloned())
                     .collect::<Vec<Number>>();
 
                 nums.dedup();
